@@ -14,8 +14,7 @@ build:
   script:
     # Removing pyproject.toml here to prevent build from using poetry
     # because currently a dev version of poetry is required
-    - {{ PYTHON }} -c '__import__("os").unlink("pyproject.toml")'  # [unix]
-    - del pyproject.toml  # [win]
+    - {{ PYTHON }} -c '__import__("os").unlink("pyproject.toml")'
     - {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -26,6 +25,7 @@ requirements:
   run:
     - pyserial >=3.1,<4.0
     - python >=3.6,<4.0
+    - typer >=0.6,<0.7
 
 test:
   imports:
