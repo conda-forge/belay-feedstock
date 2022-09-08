@@ -10,6 +10,8 @@ source:
   sha256: 93dee195f9ad10ee8786a4cc50a9230950852290d3f155e6dde80101709d2513
 
 build:
+  entry_points:
+    - belay=belay.cli.main:app
   noarch: python
   script:
     # Removing pyproject.toml here to prevent build from using poetry
@@ -21,10 +23,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6,<4.0
+    - python >=3.8,<4.0
   run:
     - pyserial >=3.1,<4.0
-    - python >=3.6,<4.0
+    - python >=3.8,<4.0
     - typer >=0.6,<0.7
 
 test:
@@ -32,6 +34,7 @@ test:
     - belay
   commands:
     - pip check
+    - belay --help
   requires:
     - pip
 
