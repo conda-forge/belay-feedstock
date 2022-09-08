@@ -1,5 +1,5 @@
 {% set name = "belay" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/belay-{{ version }}.tar.gz
-  sha256: 5016b80dc1f43b1daac9f1968c84002648a3d9a17ba0dcb30af7ecae9bbbe22e
+  sha256: 93dee195f9ad10ee8786a4cc50a9230950852290d3f155e6dde80101709d2513
 
 build:
   noarch: python
