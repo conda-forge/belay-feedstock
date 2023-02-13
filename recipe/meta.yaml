@@ -51,6 +51,7 @@ test:
     - pip check
     - belay --help
   requires:
+    - git
     - pip
 
 about:
