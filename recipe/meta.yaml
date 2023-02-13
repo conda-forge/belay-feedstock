@@ -1,5 +1,5 @@
 {% set name = "belay" %}
-{% set version = "0.16.2" %}
+{% set version = "0.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/belay-{{ version }}.tar.gz
-  sha256: 31b21111d3250ef20be2c6286b5d44c35ad89dc01f4e76f6dd89a5d77ef039c4
+  sha256: 20ce070dbf7d5db77c26593a97ab57535cc82e5e9b84d7b00afb811f8f8261ce
 
 build:
   entry_points:
-    - belay=belay.cli.main:app
+    - belay=belay.cli.main:run_app
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv
@@ -24,14 +24,19 @@ requirements:
     - poetry-dynamic-versioning-plugin
     - python >=3.8,<4.0
   run:
+    - aiohttp >=3.8.3,<4.0.0
     - autoregistry >=0.8.2,<0.9.0
     # From typer-all
     - colorama >=0.4.3,<0.5.0
+    - fsspec >=2022.11.0,<2023.0.0
+    - gitpython >=3.1.30,<4.0.0
     - httpx >=0.23.0,<0.24.0
     - packaging
     - pathspec
+    - pydantic >=1.10.4,<2.0.0
     - pyserial >=3.1,<4.0
     - python >=3.8,<4.0
+    - requests >=2.28.1,<3.0.0
     # From typer-all
     - rich >=10.11.0,<13.0.0
     # From typer-all
@@ -46,6 +51,7 @@ test:
     - pip check
     - belay --help
   requires:
+    - git
     - pip
 
 about:
