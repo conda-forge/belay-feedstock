@@ -1,5 +1,5 @@
 {% set name = "belay" %}
-{% set version = "0.18.4" %}
+{% set version = "0.19.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/belay-{{ version }}.tar.gz
-  sha256: 4c2f17a1b3e31e2e3a3731afa69d6285435fd34fefe528f42f45acba4cc57266
+  sha256: d87c4074cef01b411d458a35ecf6a1c9beeb590389b1b0f16a98428d504996ae
 
 build:
   entry_points:
