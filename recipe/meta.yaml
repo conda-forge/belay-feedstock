@@ -30,6 +30,8 @@ requirements:
     - colorama >=0.4.3,<0.5.0
     - fsspec >=2022.11.0,<2023.0.0
     - gitpython >=3.1.30,<4.0.0
+    # Somehow this is needed for the CLI
+    - packaging
     - pathspec
     - pydantic >=1.10.4,<2.0.0
     - pyserial >=3.1,<4.0
