@@ -28,7 +28,7 @@ requirements:
     - autoregistry >=0.10.1
     # From typer-all
     - colorama >=0.4.3,<0.5.0
-    - fsspec >=2022.11.0,
+    - fsspec >=2022.11.0
     - gitpython >=3.1.30
     - packaging >=20.4
     - pathspec >=0.10.3
