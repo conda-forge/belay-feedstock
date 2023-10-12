@@ -1,5 +1,5 @@
 {% set name = "belay" %}
-{% set version = "0.21.3" %}
+{% set version = "0.22.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/belay-{{ version }}.tar.gz
-  sha256: 234743cc67b943554f7fad2eaec0494f556547479a2d796e5371d17a4c1c993f
+  sha256: 4ecf241f30e5a13af8eee8e12c9d1cb6815fcba27e3a7395d5e2bfcf26358354
 
 build:
   entry_points:
@@ -22,21 +22,22 @@ requirements:
     - pip
     - poetry-core >=1.0.0
     - poetry-dynamic-versioning
-    - python >=3.8
+    - python >=3.8.0,<4.0.0
   run:
+    - python >=3.8.0,<4.0.0
+    - pyserial >=3.1
+    - typer >=0.6.0
+    - pathspec >=0.10.3
+    - tomli >=2.0.1
     - autoregistry >=0.10.1
     - fsspec >=2022.11.0
-    - gitpython >=3.1.30
-    - packaging >=20.4
-    - pathspec >=0.10.3
-    - pydantic >=1.10.4
-    - pyserial >=3.1
-    - python >=3.8.0,<4.0.0
-    - questionary >=2.0.0
     - requests >=2.28.1
-    - tomli >=2.0.1
-    - typer >=0.6.0
+    - gitpython >=3.1.30
+    - pydantic >=1.10.4
     - typing-extensions >=4.5.0
+    - questionary >=2.0.0
+    - packaging >=20.4
+    - importlib_resources >=3.0.0
 
     # From typer-all
     - colorama >=0.4.3,<0.5.0
