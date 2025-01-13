@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/belay-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/belay-{{ version }}.tar.gz
   sha256: 88c68b59e1af2438072518ad2503a91f47aa1d77006a51d4f7590ef09ac37dd2
 
 build:
@@ -15,16 +15,16 @@ build:
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
     - poetry-core >=1.0.0
     - poetry-dynamic-versioning
-    - python >=3.8.0,<4.0.0
+    - python {{ python_min }}
   run:
-    - python >=3.8.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - pyserial >=3.1
     - typer >=0.6.0
     - pathspec >=0.10.3
@@ -62,6 +62,7 @@ test:
   requires:
     - git
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/BrianPugh/belay
