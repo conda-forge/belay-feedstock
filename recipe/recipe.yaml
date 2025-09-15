@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: belay
-  version: "0.27.0"
+  version: "0.28.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/belay-${{ version }}.tar.gz
-  sha256: 29b2df61c986e6174ead5506a879b30cd5776c64cdc7d0e34c396b21528a0255
+  sha256: fcae10f293f00dfeb435209b25356a2f679779da4a1fa361436dd2a7b34c78c9
 
 build:
   number: 0
